@@ -1,0 +1,20 @@
+:root {
+  --reign-studio-border-color-dark: #2e2e2e;
+  --reign-studio-border-color-light: #dcdcdc;
+  --reign-studio-bg-primary: #0d0d0d;
+  --reign-studio-bg-secondary: #1f1f1f;
+  --reign-studio-accent-orange: #ff6600;
+  --reign-studio-accent-orange-dark: #cc5200;
+  --reign-studio-accent-blue: #146ef5;
+  --reign-studio-accent-blue-dark: #0155d4;
+  --reign-studio-text-primary-white: var(--reign-studio-color-white);
+  --reign-studio-text-primary-black: #0d0d0d;
+  --reign-studio-text-secondary: #aaaaaa;
+  --reign-studio-color-white: #ffffff;
+  --reign-studio-color-yellow: #f0ea9f;
+  --reign-studio-color-light-gray: #e9e9e9;
+  --reign-studio-color-gray: #d3d3d3;
+
+  --reign-studio-filter-orange: brightness(0) saturate(100%) invert(40%)
+    sepia(87%) saturate(1399%) hue-rotate(359deg) brightness(99%) contrast(104%);
+}

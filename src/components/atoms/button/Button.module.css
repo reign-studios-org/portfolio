@@ -1,0 +1,23 @@
+.button {
+  border: none;
+  border-radius: 8px;
+  color: var(--reign-studio-text-primary-white);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.buttonOrange {
+  background-color: var(--reign-studio-accent-orange);
+}
+
+.buttonOrange:hover {
+  background-color: var(--reign-studio-accent-orange-dark);
+}
+
+.buttonBlue {
+  background-color: var(--reign-studio-accent-blue);
+}
+
+.buttonBlue:hover {
+  background-color: var(--reign-studio-accent-blue-dark);
+}

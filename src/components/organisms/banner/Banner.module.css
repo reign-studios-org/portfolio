@@ -1,0 +1,16 @@
+.banner {
+  align-items: center;
+  display: flex;
+  background-color: var(--reign-studio-bg-primary);
+  height: calc(100vh - 90px); /* full viewport height */
+  justify-content: center;
+  width: 100%;
+}
+
+.bannerImage {
+  filter: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 1px var(--reign-studio-color-yellow));
+  height: 50%;
+  margin-top: -90px;
+  width: auto;
+}

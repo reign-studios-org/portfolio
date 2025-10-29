@@ -1,0 +1,29 @@
+.teamSection {
+  background-color: var(--reign-studio-bg-primary);
+  color: var(--reign-studio-color-white);
+  padding: 20px;
+  text-align: center;
+}
+
+.memberCard {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.memberCard h5 {
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.memberCard h6 {
+  color: var(--reign-studio-text-secondary);
+}
+
+.memberCard img {
+  border: 1px solid var(--reign-studio-accent-orange);
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px var(--reign-studio-border-color-dark);
+  height: auto;
+  width: 80%;
+}

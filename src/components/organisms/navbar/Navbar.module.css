@@ -1,0 +1,41 @@
+.navbar {
+  background-color: var(--reign-studio-bg-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar > div {
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logoWrapper {
+  height: 50px;
+}
+
+.logoWrapper img {
+  -webkit-filter: var(--reign-studio-filter-orange);
+  filter: var(--reign-studio-filter-orange);
+  height: 100%;
+}
+
+.navLinkWrapper {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  gap: 20px;
+  height: 100%;
+  list-style: none;
+}
+
+.navLinkWrapper li a {
+  color: var(--reign-studio-text-secondary);
+  text-decoration: none;
+}
+
+.navLinkWrapper li a:hover {
+  color: var(--reign-studio-accent-orange);
+}

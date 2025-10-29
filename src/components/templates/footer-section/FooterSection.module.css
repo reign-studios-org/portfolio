@@ -1,0 +1,6 @@
+.footerSection {
+  border-top: 1px solid var(--reign-studio-border-color-dark);
+  color: var(--reign-studio-text-secondary);
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+.card {
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.darkVariant {
+  background-color: var(--reign-studio-bg-secondary);
+  border: 1px solid var(--reign-studio-border-color-dark);
+  color: var(--reign-studio-text-primary-white);
+}
+
+.lightVariant {
+  background-color: var(--reign-color-light-gray);
+  border: 1px solid var(--reign-color-gray);
+  color: var(--reign-studio-bg-secondary);
+}

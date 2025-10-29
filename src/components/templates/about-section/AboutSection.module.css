@@ -1,0 +1,74 @@
+.aboutSection {
+  background-color: var(--reign-studio-color-white);
+  color: var(--reign-studio-bg-secondary);
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.section2 {
+  background-color: var(--reign-studio-color-light-gray);
+  border: 1px solid var(--reign-studio-color-gray);
+  box-shadow: 0px 0px 10px var(--reign-studio-color-gray);
+  border-radius: 8px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.companyCardWrapper > div {
+  align-items: center;
+  box-shadow: 0px 0px 10px var(--reign-studio-bg-secondary);
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.companyCardWrapper > div > h5 {
+  color: var(--reign-studio-text-secondary);
+}
+
+/* make only the image center vertically */
+.companyImage {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.achievementCardWrapper img {
+  box-shadow: 0px 0px 15px var(--reign-studio-color-gray);
+  border-radius: 8px;
+  height: auto;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pledgeCardWrapper img {
+  border-radius: 50%;
+  height: auto;
+  width: 50%;
+}
+
+@media (max-width: 766px) {
+  .companyCardWrapper > div {
+    height: 300px;
+  }
+  
+  .aboutSection,
+  .section2 {
+    border: none;
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .aboutSection {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}

@@ -1,0 +1,9 @@
+.milestoneSection {
+  background: linear-gradient(
+    to bottom,
+    var(--reign-studio-bg-primary) 0%,
+    var(--reign-studio-bg-primary) 40%,
+    var(--reign-studio-color-white) 40%,
+    var(--reign-studio-color-white) 100%
+  );
+}

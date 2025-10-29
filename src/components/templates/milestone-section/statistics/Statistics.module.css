@@ -1,0 +1,21 @@
+.cardWrapper > div {
+  box-shadow: 0px 0px 3px var(--reign-studio-border-color-dark);
+  padding-bottom: 40px !important;
+  padding-top: 40px !important;
+  text-align: center;
+}
+
+.cardWrapper > div div:first-child {
+  color: var(--reign-studio-accent-orange);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cardWrapper > div div:last-child {
+  color: var(--reign-studio-text-secondary);
+  font-size: 20px;
+}
+
+.button {
+  width: 100%;
+}
