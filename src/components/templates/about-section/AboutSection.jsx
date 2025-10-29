@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Card } from '../../molecules';
 import styles from './AboutSection.module.css';
 import { ACHIEVEMENTS } from './achievements.constant';
@@ -6,23 +6,25 @@ import { COMPANIES } from './companies.constant';
 import { PLEDGES } from './pledges.constant';
 
 export const AboutSection = () => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    const handleResize = () => {
-      const container = document.querySelector(`#about .container`);
-      if (container) {
-        if (window.innerWidth <= 766) {
-          container.classList.remove('container');
-        } else {
-          if (!container.classList.contains('container')) {
-            container.classList.add('container');
-          }
-        }
+    const adjustContainer = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      if (window.innerWidth <= 766) {
+        console.log('removing');
+        container.classList.remove('container');
+      } else {
+        console.log('adding');
+        container.classList.add('container');
       }
     };
 
-    handleResize(); // Run once on mount
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    adjustContainer();
+    window.addEventListener('resize', adjustContainer);
+    return () => window.removeEventListener('resize', adjustContainer);
   }, []);
 
   return (
