@@ -4,6 +4,7 @@
   color: var(--reign-studio-text-primary-white);
   padding: 8px 10px;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .buttonOrange {
@@ -12,6 +13,7 @@
 
 .buttonOrange:hover {
   background-color: var(--reign-studio-accent-orange-dark);
+  transition: background-color 0.3s ease,
 }
 
 .buttonBlue {
@@ -20,4 +22,5 @@
 
 .buttonBlue:hover {
   background-color: var(--reign-studio-accent-blue-dark);
+  transition: background-color 0.3s ease;
 }
