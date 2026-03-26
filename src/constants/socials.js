@@ -10,7 +10,7 @@ export const SOCIALS = [
     id: 2,
     type: 'roblox',
     label: 'Roblox Members',
-    url: 'https://www.roblox.com/...',
+    url: 'https://www.roblox.com/communities/759293173/R-S-TEAM-REIGN-PIECE',
     key: 'roblox',
   },
   {
