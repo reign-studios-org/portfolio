@@ -19,3 +19,48 @@ html {
 section[id], div[id] {
   scroll-margin-top: 80px; /* Matches your navbar height */
 }
+
+/* ===== Scrollbar (Global) ===== */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) var(--bg-secondary);
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--color-gold),
+    var(--color-ruby-dark)
+  );
+  border-radius: 10px;
+  border: 2px solid var(--bg-secondary); /* creates padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-crimson),
+    var(--color-ruby-dark)
+  );
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-crimson);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg-secondary);
+}

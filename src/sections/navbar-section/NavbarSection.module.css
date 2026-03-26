@@ -10,7 +10,7 @@
 .bar::before,
 .bar::after {
   background-color: var(--color-white);
-  content: "";
+  content: '';
   height: 2px;
   left: 0;
   position: absolute;
@@ -18,12 +18,24 @@
   width: 25px;
 }
 
-.bar::before { top: -8px; }
-.bar::after { top: 8px; }
+.bar::before {
+  top: -8px;
+}
+.bar::after {
+  top: 8px;
+}
 
-.barActive { background-color: transparent; }
-.barActive::before { top: 0; transform: rotate(45deg); }
-.barActive::after { top: 0; transform: rotate(-45deg); }
+.barActive {
+  background-color: transparent;
+}
+.barActive::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.barActive::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
 
 .hamburger {
   background: none;
@@ -35,7 +47,7 @@
 }
 
 .logo {
-  height: 32px;
+  height: 50px;
   transition: transform 0.2s ease;
   width: auto;
 }
@@ -92,8 +104,12 @@
 }
 
 @media (max-width: 1024px) {
-  .hamburger { display: block; }
-  .navMenu { display: none; }
+  .hamburger {
+    display: block;
+  }
+  .navMenu {
+    display: none;
+  }
   .mobileMenu {
     align-items: center;
     background-color: var(--color-dark);
@@ -110,7 +126,9 @@
     width: 100%;
     z-index: 90;
   }
-  .mobileMenuOpen { top: 0; }
+  .mobileMenuOpen {
+    top: 0;
+  }
   .mobileNavLink {
     color: var(--color-white);
     font-size: 1.5rem;
