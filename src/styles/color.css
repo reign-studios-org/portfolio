@@ -1,0 +1,54 @@
+:root {
+  /* Core Palette (Derived from image + requested additions) */
+  --color-dark: #070708;
+  --color-midnight:  #0f0f12;  /* primary background */
+  --color-obsidian:  #1a1a1e;  /* card/surface color */
+  --color-silver:    #e2e2e6;  /* bright neutral text */
+  --color-gold:      #e9c46a;  /* accent / premium gold */
+  --color-crimson:   #e11d48;  /* vibrant red for actions */
+  --color-cyan:      #61dafb;  /* react logo blue from image */
+  --color-violet:    #c084fc;  /* purple highlight from image */
+  --color-slate:     #94a3b8;  /* muted text / meta info */
+  --color-ruby-dark: #881337;  /* deep red for hover states */
+  --color-white:     #ffffff;
+
+  /* Backgrounds */
+  --bg-primary:   #0f0f12;  /* main page background */
+  --bg-secondary: #16161a;  /* cards / container background */
+  --bg-elevated:  #242429;  /* modals / tooltips */
+  --bg-muted:     #2a2a30;  /* hover states for cards */
+  --bg-inverse:   #ffffff;  
+
+  /* Typography */
+  --text-primary:   #ffffff;  /* main titles */
+  --text-secondary: #e2e2e6;  /* standard reading text */
+  --text-muted:     #94a3b8;  /* labels and placeholders */
+  --text-inverse:   #0f0f12;  /* dark text on light elements */
+  --text-accent:    #e9c46a;  /* gold text for emphasis */
+
+  /* Primary action (Red) */
+  --btn-primary-bg:    #e11d48;
+  --btn-primary-text:  #ffffff;
+  --btn-primary-hover: #881337;
+
+  /* Secondary action (Purple from image) */
+  --btn-secondary-bg:    #c084fc;
+  --btn-secondary-text:  #0f0f12;
+  --btn-secondary-hover: #a855f7;
+
+  /* Neutral/Premium action (Gold) */
+  --btn-neutral-bg:    #e9c46a;
+  --btn-neutral-text:  #0f0f12;
+  --btn-neutral-hover: #d4af37;
+
+  /* Status & Accents */
+  --status-danger:  #e11d48;
+  --status-info:    #61dafb;
+  --status-accent:  #e9c46a;
+
+  /* Borders & Dividers */
+  --border-default: #2a2a30;
+  --border-strong:  #3f3f46;
+  --divider:        #1f1f23;
+  --focus-ring:     #c084fc;
+}

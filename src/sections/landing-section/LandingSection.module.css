@@ -1,0 +1,114 @@
+.bannerContainer {
+  align-items: center;
+  background-color: var(--color-midnight);
+  display: flex;
+  height: 60vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .bannerContainer {
+    height: 85vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
+
+.imageWrapper {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.bannerImage {
+  filter: brightness(1.1) contrast(1.1);
+  height: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  /* Gradually makes the image transparent towards the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+  object-fit: cover;
+  object-position: top; /* Keeps the heads/top action visible */
+  width: 100%;
+
+  pointer-events: none;       /* Makes the mouse 'pass through' the image */
+  -webkit-user-drag: none;    /* Prevents dragging the image (Chrome/Safari) */
+  user-select: none;          /* Prevents highlighting/selection */
+}
+
+.overlay {
+  /* Fades the Left and Right sides into the background color */
+  background: 
+    linear-gradient(to right, #0f0f12 0%, transparent 15%),
+    linear-gradient(to left, #0f0f12 0%, transparent 15%),
+    url('https://grainy-gradients.vercel.app/noise.svg');
+  inset: 0;
+  opacity: 0.6;
+  pointer-events: none;
+  position: absolute;
+}
+
+.content {
+  align-items: center;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  text-shadow: 
+    -1px -1px 0px var(--color-obsidian),
+     1px -1px 0px var(--color-obsidian),
+    -1px  1px 0px var(--color-obsidian),
+     1px  1px 0px var(--color-obsidian),
+     0px 10px 20px var(--color-ruby-dark), 
+     0px 20px 40px var(--color-midnight);
+  text-transform: uppercase;
+  z-index: 10;
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.5); /* adds extra crispness */
+}
+
+.title {
+  /* 1. The Gradient Trick */
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    to bottom, 
+    var(--color-crimson) 20%, 
+    var(--color-ruby-dark) 100%
+  );
+  color: transparent;
+  
+  /* 2. Standard Properties */
+  display: inline-block; /* Helps with background clipping consistency */
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+  text-transform: uppercase;
+  
+  /* 3. The Border (Stroke) */
+  /* We use a very low opacity so it doesn't hide the gradient edges */
+  -webkit-text-stroke: 1px #000000; 
+
+  /* 4. The Shadow Layering */
+  /* This shadow sits BEHIND the gradient background */
+  text-shadow: 
+    0px 1000px 10000px rgba(190, 18, 60, 0.4), /* Ruby-dark glow */
+    0px 20px 70px var(--color-midnight);   /* Deep depth */
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  margin-top: 0.5rem;
+}

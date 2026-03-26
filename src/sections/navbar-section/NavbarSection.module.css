@@ -1,0 +1,120 @@
+.bar {
+  background-color: var(--color-white);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 25px;
+}
+
+.bar::before,
+.bar::after {
+  background-color: var(--color-white);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: all 0.3s ease;
+  width: 25px;
+}
+
+.bar::before { top: -8px; }
+.bar::after { top: 8px; }
+
+.barActive { background-color: transparent; }
+.barActive::before { top: 0; transform: rotate(45deg); }
+.barActive::after { top: 0; transform: rotate(-45deg); }
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  padding: 10px;
+  z-index: 100;
+}
+
+.logo {
+  height: 32px;
+  transition: transform 0.2s ease;
+  width: auto;
+}
+
+.logoLink {
+  align-items: center;
+  display: flex;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.navbarContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.navbarWrapper {
+  background-color: var(--color-dark); /* Same as footer */
+  border-bottom: 1px solid var(--divider);
+  display: flex;
+  height: 80px;
+  left: 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navLink {
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-crimson);
+}
+
+.navMenu {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+@media (max-width: 1024px) {
+  .hamburger { display: block; }
+  .navMenu { display: none; }
+  .mobileMenu {
+    align-items: center;
+    background-color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    list-style: none;
+    position: fixed;
+    top: -100vh;
+    transition: top 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    z-index: 90;
+  }
+  .mobileMenuOpen { top: 0; }
+  .mobileNavLink {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}

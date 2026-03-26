@@ -1,0 +1,85 @@
+/* --- SECTION STYLES --- */
+.socialsSection {
+  background-color: var(--bg-primary);
+  padding-bottom: 120px;
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .socialsSection {
+    padding-bottom: 65px;
+    padding-top: 25px;
+  }
+}
+
+.sectionTitle {
+  color: var(--text-primary);
+  font-family: var(--heading);
+  font-size: clamp(1.2rem, 5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* --- CARD STYLES --- */
+.socialCard {
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  /* Reduced padding for 2-column mobile layout */
+  padding: clamp(16px, 4vw, 32px) 10px; 
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.socialCard:hover {
+  background-color: var(--bg-muted);
+  border-color: var(--focus-ring);
+  transform: translateY(-4px);
+}
+
+.socialLink {
+  display: block;
+  text-decoration: none;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardIcon {
+  color: var(--color-white);
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  margin-bottom: 0.25rem;
+  opacity: 0.9;
+}
+
+.cardCount {
+  color: var(--color-white);
+  /* Clamped so big numbers don't overflow 2-column mobile grid */
+  font-size: clamp(16px, 4.5vw, 26px); 
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.cardLabel {
+  color: var(--text-secondary);
+  font-size: clamp(10px, 3vw, 13px);
+  font-weight: 600;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.noClick {
+  cursor: default;
+  user-select: none;
+}

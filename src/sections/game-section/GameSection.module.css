@@ -1,0 +1,179 @@
+/* --- MAIN WRAPPER --- */
+.gameSection {
+  background-color: #f0f0f0; /* Matches the inner container */
+  padding: 0; /* Complete edge-to-edge */
+  width: 100%;
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh; /* Adjust height based on preference */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .gameContainer {
+    flex-direction: row;
+  }
+}
+
+/* --- DETAILS SIDE --- */
+.detailsSide {
+  align-items: center;
+  background-color: #f0f0f0;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 80px 40px;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .detailsSide {
+    justify-content: end;
+  }
+}
+
+.contentWrapper {
+  max-width: 500px;
+  text-align: center;
+  width: 100%;
+}
+
+.gameTitle {
+  color: #111111;
+  font-family: var(--heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.statBox {
+  background-color: #e2e2e2;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  padding: 24px 48px;
+}
+
+.statValue {
+  color: #111111;
+  display: block;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.statLabel {
+  color: #666666;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* --- BUTTONS --- */
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.playBtn {
+  background-color: var(--color-crimson);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 18px 48px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.playBtn:hover {
+  background-color: var(--color-ruby-dark);
+}
+
+.viewBtn {
+  background-color: transparent;
+  border: 2px solid #cccccc;
+  border-radius: 4px;
+  color: #111111;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 18px 48px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.viewBtn:hover {
+  background-color: #111111;
+  border-color: #111111;
+  color: white;
+}
+
+/* --- NAVIGATION BARS --- */
+.navContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.navBar {
+  background-color: #cccccc;
+  border: none;
+  cursor: pointer;
+  height: 4px;
+  transition: all 0.3s ease;
+  width: 60px;
+}
+
+.activeBar {
+  background-color: var(--color-crimson);
+  width: 100px;
+}
+
+/* --- ANIMATION --- */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* --- IMAGE SIDE & SLANT --- */
+.imageSide {
+  flex: 1.4; /* Slightly wider than text side */
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .imageSide {
+    /* Creates a slant that scales with screen width */
+    clip-path: polygon(10vw 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+.gameImage {
+  /* cubic-bezier makes the auto-slide feel "snappy" like a game UI */
+  animation: slideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
