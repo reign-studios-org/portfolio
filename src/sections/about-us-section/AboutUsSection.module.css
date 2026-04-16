@@ -4,6 +4,13 @@
   padding-top: 60px;
 }
 
+@media (max-width: 768px) {
+  .aboutUs {
+    padding-bottom: 65px;
+    padding-top: 0;
+  }
+}
+
 .sectionTitle {
   color: var(--text-primary);
   font-family: var(--heading);
