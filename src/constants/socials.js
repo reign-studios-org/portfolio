@@ -10,6 +10,7 @@ export const SOCIALS = [
     id: 2,
     type: 'roblox',
     label: 'Roblox Members',
+    hasMultipleGroupCounts: true,
     url: 'https://www.roblox.com/communities/759293173/R-S-TEAM-REIGN-PIECE',
     key: 'roblox',
   },
@@ -23,7 +24,7 @@ export const SOCIALS = [
   {
     id: 4,
     type: 'gameVisit',
-    label: 'Game Visits',
+    label: 'Total Game Visits',
     key: 'game',
   },
 ];

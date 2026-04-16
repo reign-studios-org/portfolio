@@ -24,7 +24,7 @@ const getSocialIcon = (type) => {
 export const SocialsSection = () => {
   const [stats, setStats] = useState({
     discord: 26816,
-    roblox: 131970,
+    roblox: 227925,
     x: 500,
     game: 4098166,
   });
@@ -51,6 +51,8 @@ export const SocialsSection = () => {
       });
 
     // Fetch the count of roblox members
+    // 33322359 = Enchanted
+    // 759293173 = Reign Piece
     // fetch('https://groups.roblox.com/v1/groups/759293173')
     //   .then((res) => res.json())
     //   .then((data) => {
@@ -101,6 +103,12 @@ export const SocialsSection = () => {
                     </span>
                     <span className={styles.cardLabel}>{item.label}</span>
                   </div>
+
+                  {item.hasMultipleGroupCounts && (
+                    <div className={styles.accumulativeCountWrapper}>
+                      <span>Accumulative (Multiple)</span>
+                    </div>
+                  )}
                 </article>
               </a>
             </li>

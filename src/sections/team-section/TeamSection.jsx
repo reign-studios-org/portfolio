@@ -93,21 +93,35 @@ const TeamCard = ({ member, onCopy }) => (
 ========================= */
 const TeamRow = ({ members, speedClass, title, onCopyHandler }) => {
   const [shouldAnimate, setShouldAnimate] = useState(false);
-  const containerRef = useRef(null);
+  // 1. Rename ref for clarity and we will move it to the track
+  const trackRef = useRef(null);
 
   useEffect(() => {
     const checkOverflow = () => {
-      if (containerRef.current) {
-        setShouldAnimate(
-          containerRef.current.scrollWidth > window.innerWidth
-        );
+      if (trackRef.current) {
+        // 2. The core of the fix is here
+        // Get the width of the content as it's currently rendered
+        const currentContentWidth = trackRef.current.scrollWidth;
+
+        // If animating, the content is duplicated. We need the original width.
+        // So, we divide by 2 if it's currently animating.
+        const singleSetWidth = shouldAnimate
+          ? currentContentWidth / 2
+          : currentContentWidth;
+
+        // Now, compare the single set's width to the container's width (the viewport in this case)
+        setShouldAnimate(singleSetWidth > window.innerWidth);
       }
     };
 
+    // Run the check initially and on any resize
     checkOverflow();
     window.addEventListener('resize', checkOverflow);
+    
     return () => window.removeEventListener('resize', checkOverflow);
-  }, [members]);
+    // 3. Add `shouldAnimate` to the dependency array
+    // This ensures the event listener is updated with the latest state value
+  }, [members, shouldAnimate]);
 
   return (
     <>
@@ -115,14 +129,18 @@ const TeamRow = ({ members, speedClass, title, onCopyHandler }) => {
         {title}
       </h2>
 
-      <div className={styles.rowWrapper} ref={containerRef}>
+      {/* The outer wrapper no longer needs a ref */}
+      <div className={styles.rowWrapper}>
         <div
+          // Attach the ref to the element whose content width changes
+          ref={trackRef}
           className={clsx(
             styles.cardTrack,
             shouldAnimate && speedClass,
             !shouldAnimate && styles.centeredTrack
           )}
         >
+          {/* This duplication logic is correct and can stay as is */}
           {(shouldAnimate ? [...members, ...members] : members).map(
             (member, idx) => (
               <TeamCard

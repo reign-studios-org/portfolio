@@ -36,6 +36,7 @@
   padding: clamp(16px, 4vw, 32px) 10px; 
   text-align: center;
   transition: all 0.25s ease;
+  position: relative;
 }
 
 .socialCard:hover {
@@ -81,4 +82,17 @@
 .noClick {
   cursor: default;
   user-select: none;
+}
+
+.accumulativeCountWrapper {
+  background-color: #c084fc;
+  color: #ffffff;
+  padding: 4px 12px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: -12px;
+  margin-bottom: -12px;
+  border-radius: 4px;
 }
