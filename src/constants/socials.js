@@ -3,7 +3,7 @@ export const SOCIALS = [
     id: 1,
     type: 'discord',
     label: 'Discord Members',
-    url: 'https://discord.gg/ZrnBZkA4',
+    url: 'https://discord.gg/reignpiece',
     key: 'discord',
   },
   {

@@ -95,13 +95,18 @@
 }
 
 /* --- TRACKS & SECTIONS --- */
-.memberTrack {
+.reignTeamTrack {
+  animation: slideMarquee 40s linear infinite;
+}
+
+.developerTrack,
+.staffTrack {
   animation: slideMarquee 60s linear infinite reverse;
 }
 
 .rowWrapper {
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   overflow: hidden;
   width: 100%;
 }
@@ -112,7 +117,7 @@
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   letter-spacing: 0.25em;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
   text-align: center;
   text-transform: uppercase;
 }
@@ -136,10 +141,6 @@
   gap: 15px;
 }
 
-.specialTrack {
-  animation: slideMarquee 40s linear infinite;
-}
-
 .teamSection {
   background-color: var(--bg-primary);
   overflow: hidden;
@@ -160,4 +161,29 @@
 @media (max-width: 640px) {
   .cardOverlay { padding: 30px 40px; }
   .memberCard { height: 320px; width: 180px; }
+}
+
+.toast {
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  color: rgba(255, 255, 255, 0.95);
+
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.toastShow {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }

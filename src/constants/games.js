@@ -6,13 +6,13 @@ export const GAMES = [
     name: 'Reign Piece',
     experienceId: '78466992256287',
     image: gamePreview1,
-    gameVisits: 1843982,
+    gameVisits: 2485365,
   },
   {
     id: 2,
     name: 'Enchanted',
     experienceId: '104841814414402',
     image: gamePreview2,
-    gameVisits: 1600126,
+    gameVisits: 1612801,
   },
 ];

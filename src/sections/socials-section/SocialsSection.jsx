@@ -8,46 +8,65 @@ import styles from './SocialsSection.module.css';
 
 const getSocialIcon = (type) => {
   switch (type) {
-    case 'discord': return <FaDiscord />;
-    case 'roblox': return <SiRoblox />;
-    case 'gameVisit': return <FaGamepad />;
-    case 'xTwitter': return <FaXTwitter />;
-    default: return null;
+    case 'discord':
+      return <FaDiscord />;
+    case 'roblox':
+      return <SiRoblox />;
+    case 'gameVisit':
+      return <FaGamepad />;
+    case 'xTwitter':
+      return <FaXTwitter />;
+    default:
+      return null;
   }
 };
 
 export const SocialsSection = () => {
   const [stats, setStats] = useState({
-    discord: 0,
-    roblox: 112201,
-    x: 501,
-    game: 3444108,
+    discord: 26816,
+    roblox: 131970,
+    x: 500,
+    game: 4098166,
   });
 
   useEffect(() => {
     let isMounted = true;
 
     // Fetch the discord members count
-    fetch('https://discord.com/api/v9/invites/ZrnBZkA4?with_counts=true')
+    fetch('https://discord.com/api/v9/invites/reignpiece?with_counts=true')
       .then((res) => res.json())
       .then((data) => {
         if (isMounted)
           setStats((prev) => ({
             ...prev,
-            discord: data.approximate_member_count || 0,
+            discord: data.approximate_member_count || 26816,
           }));
       })
-      .catch(() => console.error('Discord fetch failed'));
+      .catch(() => {
+        if (isMounted)
+          setStats((prev) => ({
+            ...prev,
+            roblox: 26816,
+          }));
+      });
 
     // Fetch the count of roblox members
     // fetch('https://groups.roblox.com/v1/groups/759293173')
     //   .then((res) => res.json())
     //   .then((data) => {
-    //     console.log(data)
-    //     if (isMounted) setRobloxMembersCount(data.memberCount || 0);
+    //     console.log(data);
+    //     if (isMounted)
+    //       setStats((prev) => ({
+    //         ...prev,
+    //         roblox: data.memberCount || 131970,
+    //       }));
     //   })
     //   .catch(() => {
-    //     if (isMounted) setRobloxMembersCount(0);
+    //     if (isMounted)
+    //       setStats((prev) => ({
+    //         ...prev,
+    //         roblox: 131970,
+    //       }));
     //   });
 
     return () => {
@@ -73,7 +92,9 @@ export const SocialsSection = () => {
                 target={'_blank'}
               >
                 <article className={styles.socialCard}>
-                  <div className={styles.cardIcon}>{getSocialIcon(item.type)}</div>
+                  <div className={styles.cardIcon}>
+                    {getSocialIcon(item.type)}
+                  </div>
                   <div className={styles.cardContent}>
                     <span className={styles.cardCount}>
                       {formatNumber(stats[item.key])}

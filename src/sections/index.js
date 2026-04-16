@@ -1,3 +1,4 @@
+export * from './about-us-section';
 export * from './footer-section';
 export * from './game-section';
 export * from './landing-section';

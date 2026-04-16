@@ -1,30 +1,57 @@
 import { useEffect, useRef, useState } from 'react';
 import { AiFillInstagram } from 'react-icons/ai';
 import { BsGlobe } from 'react-icons/bs';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaDiscord, FaXTwitter } from 'react-icons/fa6';
 import { MdQuestionMark } from 'react-icons/md';
 import { SiRoblox } from 'react-icons/si';
 import clsx from 'clsx';
-import { SPECIAL_MEMBERS, MEMBERS } from '@constants';
+import { DEVELOPERS, REIGN_TEAM_MEMBERS, STAFFS } from '@constants';
 import styles from './TeamSection.module.css';
 
+/* =========================
+   ICON MAPPING
+========================= */
 const getSocialIcon = (type) => {
   switch (type) {
-    case 'instagram': return <AiFillInstagram />;
-    case 'roblox': return <SiRoblox />;
-    case 'website': return <BsGlobe />;
-    case 'twitter': return <FaXTwitter />;
-    default: return null;
+    case 'instagram':
+      return <AiFillInstagram />;
+    case 'roblox':
+      return <SiRoblox />;
+    case 'website':
+      return <BsGlobe />;
+    case 'x':
+      return <FaXTwitter />;
+    case 'discord':
+      return <FaDiscord />;
+    default:
+      return null;
   }
 };
 
-const TeamCard = ({ member }) => (
+/* =========================
+   TOAST NOTIFIER COMPONENT
+========================= */
+const CopyToast = ({ visible, message }) => {
+  return (
+    <div
+      className={clsx(styles.toast, visible && styles.toastShow)}
+    >
+      {message}
+    </div>
+  );
+};
+
+/* =========================
+   TEAM CARD
+========================= */
+const TeamCard = ({ member, onCopy }) => (
   <div className={styles.cardShadowWrapper}>
     <article
       className={styles.memberCard}
-      style={{ backgroundImage: member.image ? `url(${member.image})` : 'none' }}
+      style={{
+        backgroundImage: member.image ? `url(${member.image})` : 'none',
+      }}
     >
-      {/* 1. Placeholder Icon if no image exists */}
       {!member.image && (
         <div className={styles.placeholderContainer}>
           <MdQuestionMark className={styles.placeholderIcon} />
@@ -36,15 +63,21 @@ const TeamCard = ({ member }) => (
           <h3 className={styles.memberName}>{member.name}</h3>
           <span className={styles.memberTitle}>{member.title}</span>
         </div>
-        
+
         <div className={styles.socialsContainer}>
           {member.socials?.map((social, idx) => (
             <a
               key={idx}
               className={styles.socialIcon}
-              href={social.link}
+              href={social.type === 'discord' ? undefined : social.link}
               rel="noopener noreferrer"
               target="_blank"
+              onClick={(e) => {
+                if (social.type === 'discord') {
+                  e.preventDefault();
+                  onCopy(social.link);
+                }
+              }}
             >
               {getSocialIcon(social.type)}
             </a>
@@ -55,14 +88,19 @@ const TeamCard = ({ member }) => (
   </div>
 );
 
-const TeamRow = ({ members, speedClass }) => {
+/* =========================
+   TEAM ROW
+========================= */
+const TeamRow = ({ members, speedClass, title, onCopyHandler }) => {
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
     const checkOverflow = () => {
       if (containerRef.current) {
-        setShouldAnimate(containerRef.current.scrollWidth > window.innerWidth);
+        setShouldAnimate(
+          containerRef.current.scrollWidth > window.innerWidth
+        );
       }
     };
 
@@ -72,32 +110,98 @@ const TeamRow = ({ members, speedClass }) => {
   }, [members]);
 
   return (
-    <div className={styles.rowWrapper} ref={containerRef}>
-      <div
-        className={clsx(
-          styles.cardTrack,
-          shouldAnimate && speedClass,
-          !shouldAnimate && styles.centeredTrack,
-        )}
-      >
-        {(shouldAnimate ? [...members, ...members] : members).map(
-          (member, idx) => (
-            <TeamCard key={`${member.id}-${idx}`} member={member} />
-          ),
-        )}
+    <>
+      <h2 id="team-title" className={styles.sectionTitle}>
+        {title}
+      </h2>
+
+      <div className={styles.rowWrapper} ref={containerRef}>
+        <div
+          className={clsx(
+            styles.cardTrack,
+            shouldAnimate && speedClass,
+            !shouldAnimate && styles.centeredTrack
+          )}
+        >
+          {(shouldAnimate ? [...members, ...members] : members).map(
+            (member, idx) => (
+              <TeamCard
+                key={`${member.id}-${idx}`}
+                member={member}
+                onCopy={onCopyHandler}
+              />
+            )
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
+/* =========================
+   MAIN SECTION
+========================= */
 export const TeamSection = () => {
+  const [toast, setToast] = useState({
+    visible: false,
+    message: '',
+  });
+
+  /* COPY HANDLER */
+  const onCopyHandler = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+
+      setToast({
+        visible: true,
+        message: 'Copied to clipboard!',
+      });
+
+      setTimeout(() => {
+        setToast({ visible: false, message: '' });
+      }, 1500);
+    } catch (err) {
+      console.error('Copy failed:', err);
+
+      setToast({
+        visible: true,
+        message: 'Failed to copy',
+      });
+
+      setTimeout(() => {
+        setToast({ visible: false, message: '' });
+      }, 1500);
+    }
+  };
+
   return (
     <section aria-labelledby="team-title" className={styles.teamSection}>
-      <h2 id="team-title" className={styles.sectionTitle}>
-        Our Team
-      </h2>
-      <TeamRow members={SPECIAL_MEMBERS} speedClass={styles.specialTrack} />
-      <TeamRow members={MEMBERS} speedClass={styles.memberTrack} />
+      {/* TOAST */}
+      <CopyToast
+        visible={toast.visible}
+        message={toast.message}
+      />
+
+      <TeamRow
+        title={'Reign Team'}
+        members={REIGN_TEAM_MEMBERS}
+        speedClass={styles.reignTeamTrack}
+        onCopyHandler={onCopyHandler}
+      />
+
+      <TeamRow
+        title={'Developers'}
+        members={DEVELOPERS}
+        speedClass={styles.developerTrack}
+        onCopyHandler={onCopyHandler}
+      />
+
+      <TeamRow
+        title={'Staffs'}
+        members={STAFFS}
+        speedClass={styles.staffTrack}
+        onCopyHandler={onCopyHandler}
+      />
     </section>
   );
 };

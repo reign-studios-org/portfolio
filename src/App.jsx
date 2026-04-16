@@ -1,5 +1,6 @@
 import './App.css';
 import {
+  AboutUsSection,
   FooterSection,
   GameSection,
   LandingSection,
@@ -20,6 +21,10 @@ function App() {
         
         <div id="community">
           <SocialsSection />
+        </div>
+
+        <div id="aboutus">
+          <AboutUsSection />
         </div>
 
         <div id="games">

@@ -1,0 +1,50 @@
+/* --- Cinzel Font Family --- */
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../assets/fonts/cinzel/Cinzel/Cinzel-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../assets/fonts/cinzel/Cinzel/Cinzel-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../assets/fonts/cinzel/Cinzel/Cinzel-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* --- Cinzel Decorative Font Family --- */
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('../assets/fonts/cinzel/Cinzel/CinzelDecorative-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('../assets/fonts/cinzel/Cinzel/CinzelDecorative-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('../assets/fonts/cinzel/Cinzel/CinzelDecorative-Black.ttf') format('truetype');
+  font-weight: 900; /* Black */
+  font-style: normal;
+  font-display: swap;
+}
