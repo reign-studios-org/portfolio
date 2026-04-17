@@ -54,7 +54,7 @@ export const REIGN_TEAM_MEMBERS = [
   },
   {
     id: 3,
-    name: 'Devil',
+    name: 'Ben',
     title: 'Community Manager',
     image: devilGif,
     socials: [
@@ -68,7 +68,7 @@ export const REIGN_TEAM_MEMBERS = [
       },
       {
         type: 'discord',
-        link: 'official_devil',
+        link: 'b3nvfx',
       },
     ],
   },

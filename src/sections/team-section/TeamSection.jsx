@@ -172,7 +172,7 @@ export const TeamSection = () => {
 
       setToast({
         visible: true,
-        message: 'Copied to clipboard!',
+        message: `Copied ${text} to clipboard!`,
       });
 
       setTimeout(() => {
