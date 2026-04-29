@@ -23,10 +23,10 @@ const getSocialIcon = (type) => {
 
 export const SocialsSection = () => {
   const [stats, setStats] = useState({
-    discord: 26816,
-    roblox: 227925,
-    x: 500,
-    game: 4098166,
+    discord: 28830,
+    roblox: 241379,
+    x: 501,
+    game: 4628259,
   });
 
   useEffect(() => {
@@ -39,14 +39,14 @@ export const SocialsSection = () => {
         if (isMounted)
           setStats((prev) => ({
             ...prev,
-            discord: data.approximate_member_count || 26816,
+            discord: data.approximate_member_count || 28830,
           }));
       })
       .catch(() => {
         if (isMounted)
           setStats((prev) => ({
             ...prev,
-            roblox: 26816,
+            discord: 28830,
           }));
       });
 

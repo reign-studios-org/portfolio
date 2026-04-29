@@ -5,10 +5,10 @@ import {
   markusGif,
   slcyImg,
   kimiImg,
-  saintImg,
   myzakanoImg,
   seaImg,
   zazelImg,
+  savImg,
 } from '@assets';
 
 export const REIGN_TEAM_MEMBERS = [
@@ -55,7 +55,7 @@ export const REIGN_TEAM_MEMBERS = [
   {
     id: 3,
     name: 'Ben',
-    title: 'Community Manager',
+    title: 'Manager',
     image: devilGif,
     socials: [
       {
@@ -97,21 +97,21 @@ export const DEVELOPERS = [
   },
   {
     id: 2,
-    name: 'Saint',
+    name: 'Sav',
     title: 'VFX Artist',
-    image: saintImg,
+    image: savImg,
     socials: [
       {
         type: 'roblox',
-        link: 'https://www.roblox.com/users/5262852887/profile',
+        link: 'https://www.roblox.com/users/2804385491/profile',
       },
       {
         type: 'x',
-        link: 'https://x.com/saintvfx20',
+        link: 'https://x.com/ltsSav',
       },
       {
         type: 'discord',
-        link: 'saintvfx2004',
+        link: 'holy.sav',
       },
     ],
   },
@@ -181,7 +181,7 @@ export const STAFFS = [
   {
     id: 1,
     name: 'Kimi',
-    title: 'Senior Moderator',
+    title: 'Head of Staff',
     image: kimiImg,
     socials: [
       {
@@ -197,7 +197,7 @@ export const STAFFS = [
   {
     id: 2,
     name: 'Myzakano',
-    title: 'Admin',
+    title: 'Community Manager',
     image: myzakanoImg,
     socials: [
       {

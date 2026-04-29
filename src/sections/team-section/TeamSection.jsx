@@ -72,6 +72,7 @@ const TeamCard = ({ member, onCopy }) => (
               href={social.type === 'discord' ? undefined : social.link}
               rel="noopener noreferrer"
               target="_blank"
+              title={social.type === 'discord' && 'Copy Discord User'}
               onClick={(e) => {
                 if (social.type === 'discord') {
                   e.preventDefault();

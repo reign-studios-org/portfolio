@@ -62,7 +62,7 @@ export const GameSection = () => {
               <span className={styles.statValue}>
                 {formatNumber(game.gameVisits)}
               </span>
-              <span className={styles.statLabel}>Total Game Visits</span>
+              <span className={styles.statLabel}>Game Visits</span>
             </div>
 
             <div className={styles.buttonGroup}>

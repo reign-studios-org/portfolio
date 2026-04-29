@@ -12,7 +12,7 @@ import slcyImg from './members-pfp/slcy.png';
 import kimiImg from './members-pfp/kimi.png';
 import focuzImg from './members-pfp/focuz.png';
 import ferImg from './members-pfp/fer.png';
-import saintImg from './members-pfp/saint.png';
+import savImg from './members-pfp/sav.png';
 import myzakanoImg from './members-pfp/myzakano.png';
 import seaImg from './members-pfp/sea.png';
 
@@ -29,7 +29,7 @@ export {
   kimiImg,
   focuzImg,
   ferImg,
-  saintImg,
+  savImg,
   myzakanoImg,
   seaImg,
 };
