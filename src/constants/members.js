@@ -9,6 +9,7 @@ import {
   seaImg,
   zazelImg,
   savImg,
+  sillygooseImg,
 } from '@assets';
 
 export const REIGN_TEAM_MEMBERS = [
@@ -117,22 +118,22 @@ export const DEVELOPERS = [
   },
   {
     id: 3,
-    name: 'sillygoosethatsnotfood',
+    name: 'SillyGoose',
     title: 'SFX Artist',
-    image: null,
+    image: sillygooseImg,
     socials: [
-      // {
-      //   type: 'roblox',
-      //   link: '',
-      // },
-      // {
-      //   type: 'x',
-      //   link: '',
-      // },
-      // {
-      //   type: 'discord',
-      //   link: '',
-      // },
+      {
+        type: 'roblox',
+        link: 'https://www.roblox.com/users/40988201/profile',
+      },
+      {
+        type: 'x',
+        link: 'https://x.com/sillygooseSFX',
+      },
+      {
+        type: 'discord',
+        link: 'sillygoosethatsnotfood',
+      },
     ],
   },
   {
