@@ -16,6 +16,7 @@ import savImg from './members-pfp/sav.png';
 import myzakanoImg from './members-pfp/myzakano.png';
 import seaImg from './members-pfp/sea.png';
 import sillygooseImg from './members-pfp/silly-goose.png';
+import turbtkImg from './members-pfp/turbtk.png';
 
 export {
   reignPieceBackground1,
@@ -34,4 +35,5 @@ export {
   myzakanoImg,
   seaImg,
   sillygooseImg,
+  turbtkImg,
 };

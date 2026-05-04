@@ -59,8 +59,8 @@
 }
 
 .memberName {
-  color: white;
-  font-size: 1.6rem;
+  color: var(--text-primary);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
   font-weight: 900;
   margin: 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -96,12 +96,12 @@
 
 /* --- TRACKS & SECTIONS --- */
 .reignTeamTrack {
-  animation: slideMarquee 40s linear infinite;
+  animation: slideMarquee 20s linear infinite;
 }
 
 .developerTrack,
 .staffTrack {
-  animation: slideMarquee 60s linear infinite reverse;
+  animation: slideMarquee 40s linear infinite reverse;
 }
 
 .rowWrapper {

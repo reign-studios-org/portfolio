@@ -134,5 +134,9 @@
     font-size: 1.5rem;
     font-weight: 800;
     text-transform: uppercase;
+    transition: color 0.2s ease;
+  }
+  .mobileNavLink:hover {
+    color: var(--color-crimson);
   }
 }

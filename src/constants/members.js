@@ -10,6 +10,7 @@ import {
   zazelImg,
   savImg,
   sillygooseImg,
+  turbtkImg,
 } from '@assets';
 
 export const REIGN_TEAM_MEMBERS = [
@@ -70,6 +71,22 @@ export const REIGN_TEAM_MEMBERS = [
       {
         type: 'discord',
         link: 'b3nvfx',
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: 'Turb',
+    title: 'Manager',
+    image: turbtkImg,
+    socials: [
+      {
+        type: 'roblox',
+        link: 'https://www.roblox.com/users/3682809150/profile',
+      },
+      {
+        type: 'discord',
+        link: 'turbtk',
       },
     ],
   },
