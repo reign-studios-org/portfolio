@@ -12,7 +12,6 @@ import slcyImg from './members-pfp/slcy.png';
 import kimiImg from './members-pfp/kimi.png';
 import focuzImg from './members-pfp/focuz.png';
 import ferImg from './members-pfp/fer.png';
-import savImg from './members-pfp/sav.png';
 import myzakanoImg from './members-pfp/myzakano.png';
 import seaImg from './members-pfp/sea.png';
 import sillygooseImg from './members-pfp/silly-goose.png';
@@ -31,7 +30,6 @@ export {
   kimiImg,
   focuzImg,
   ferImg,
-  savImg,
   myzakanoImg,
   seaImg,
   sillygooseImg,

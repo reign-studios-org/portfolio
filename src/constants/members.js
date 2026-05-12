@@ -8,7 +8,6 @@ import {
   myzakanoImg,
   seaImg,
   zazelImg,
-  savImg,
   sillygooseImg,
   turbtkImg,
 } from '@assets';
@@ -115,26 +114,6 @@ export const DEVELOPERS = [
   },
   {
     id: 2,
-    name: 'Sav',
-    title: 'VFX Artist',
-    image: savImg,
-    socials: [
-      {
-        type: 'roblox',
-        link: 'https://www.roblox.com/users/2804385491/profile',
-      },
-      {
-        type: 'x',
-        link: 'https://x.com/ltsSav',
-      },
-      {
-        type: 'discord',
-        link: 'holy.sav',
-      },
-    ],
-  },
-  {
-    id: 3,
     name: 'SillyGoose',
     title: 'SFX Artist',
     image: sillygooseImg,
