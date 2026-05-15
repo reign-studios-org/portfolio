@@ -10,6 +10,7 @@ import {
   zazelImg,
   sillygooseImg,
   turbtkImg,
+  acusGif,
 } from '@assets';
 
 export const REIGN_TEAM_MEMBERS = [
@@ -114,6 +115,26 @@ export const DEVELOPERS = [
   },
   {
     id: 2,
+    name: 'Acus',
+    title: 'Modeler',
+    image: acusGif,
+    socials: [
+      {
+        type: 'roblox',
+        link: 'https://www.roblox.com/users/5852436858/profile',
+      },
+      {
+        type: 'x',
+        link: 'https://x.com/ReallyAcus',
+      },
+      {
+        type: 'discord',
+        link: 'dev_acus',
+      },
+    ],
+  },
+  {
+    id: 3,
     name: 'SillyGoose',
     title: 'SFX Artist',
     image: sillygooseImg,
